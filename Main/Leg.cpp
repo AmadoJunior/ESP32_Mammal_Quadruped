@@ -5,13 +5,13 @@
 
 //Constructors
 Leg::Leg(){
-    this->ulnaLenMm = 110;
+    this->ulnaLenMm = 105;
     this->carpusLenMm = 135;
 }
 Leg::Leg(int humerusPin, int ulnaPin, int carpusPin, int humerusOrigin_, int ulnaOrigin_, int carpusOrigin_) : 
 humerusPin(humerusPin), ulnaPin(ulnaPin), carpusPin(carpusPin), humerusOrigin(humerusOrigin_), ulnaOrigin(ulnaOrigin_), carpusOrigin(carpusOrigin_){
     //Length of Limbs
-    this->ulnaLenMm = 110;
+    this->ulnaLenMm = 105;
     this->carpusLenMm = 135;
 }
 
@@ -52,9 +52,9 @@ void Leg::setAngles(double x, double y, double z){
     double w, alpha, beta, gamma, q1, q2, hyp, humerusAngleR, temp;
     
     //Updating Current Coordinates
-    curCordinates.setX(x);
-    curCordinates.setY(y);
-    curCordinates.setZ(z);
+    curCoordinates.setX(x);
+    curCoordinates.setY(y);
+    curCoordinates.setZ(z);
 
     //Finding Hypothenus && Humerus Angle - Use x && z ===================
     w = sqrt(pow(z, 2) + pow(x, 2));
@@ -199,6 +199,25 @@ void Leg::setUlnaOrigin(int origin){
 
 void Leg::setCarpusOrigin(int origin){
     this->carpusOrigin = origin;
+}
+
+void Leg::setDesiredCoordinates(Coordinates desired){
+    desiredCoordinates.setX(desired.getX());
+    desiredCoordinates.setY(desired.getY());
+    desiredCoordinates.setZ(desired.getZ());
+}
+
+bool Leg::setCurCoordinateX(double x){
+    curCoordinates.setX(x);
+    return false;
+}
+bool Leg::setCurCoordinateY(double y){
+    curCoordinates.setY(y);
+    return false;
+}
+bool Leg::setCurCoordinateZ(double z){
+    curCoordinates.setZ(z);
+    return false;
 }
 
 //Getters

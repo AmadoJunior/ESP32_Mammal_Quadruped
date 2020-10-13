@@ -17,3 +17,15 @@ void Coordinates::setZ(double z){
     this->z = z;
 }
 
+//Getters
+double Coordinates::getX(){
+    return x;
+}
+
+double Coordinates::getY(){
+    return y;
+}
+
+double Coordinates::getZ(){
+    return z;
+}

@@ -26,7 +26,7 @@ class Leg{
             Servo ulnaServo;
             Servo carpusServo;
             //Coordinates
-            Coordinates curCordinates;
+            Coordinates curCoordinates;
             Coordinates desiredCoordinates;
 
         //Constructor
@@ -51,6 +51,10 @@ class Leg{
         void setUlnaLenMm(double);
         void setCarpusLenMm(double);
         void setLegCode(char);
+        void setDesiredCoordinates(Coordinates);
+        bool setCurCoordinateX(double);
+        bool setCurCoordinateY(double);
+        bool setCurCoordinateZ(double);
 
         //Getters
         double getHumerusLenMm();

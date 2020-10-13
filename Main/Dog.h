@@ -2,6 +2,7 @@
 #define DOG_CLASS_H
 
 #include "Leg.h"
+#include "Coordinates.h"
 #include <Arduino.h>
 
 class Dog{
@@ -19,8 +20,12 @@ public:
     Dog(String);
     //Methods
     void standBy();
-    void testY();
+    void stand();
+    void trot(bool state);
+    void updateAllGradual(bool, bool, bool, bool);
+    //Setters
     void setLegPinsAndOrigin(int[][3], int[][3]);
+    
 };
 
 #endif //DOG_CLASS_H

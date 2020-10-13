@@ -2,11 +2,10 @@
 #define COORDINATES_CLASS_H
 
 class Coordinates{
-    private:
+    public:
         double x;
         double y;
         double z;
-    public:
         //Constructors
         Coordinates();
         Coordinates(double x, double y, double z);
@@ -15,6 +14,11 @@ class Coordinates{
         void setX(double x);
         void setY(double y);
         void setZ(double z);
+
+        //Getters
+        double getX();
+        double getY();
+        double getZ();
 
 };
 
