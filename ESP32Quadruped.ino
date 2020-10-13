@@ -27,8 +27,6 @@ void setup() {
   myServo10.attach(22);
   myServo11.attach(23);
   myServo12.attach(26);
-
-  
 }
 
 void loop() {

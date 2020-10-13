@@ -2,12 +2,11 @@
 #define COORDINATES_CLASS_H
 
 class Coordinates{
-    public:
-        //Public Properties
+    private:
         double x;
         double y;
         double z;
-
+    public:
         //Constructors
         Coordinates();
         Coordinates(double x, double y, double z);

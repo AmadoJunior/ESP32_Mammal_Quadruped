@@ -2,17 +2,25 @@
 #define DOG_CLASS_H
 
 #include "Leg.h"
+#include <Arduino.h>
 
 class Dog{
 private:
+    String name;
     Leg legArray[4];
+    
+public:
+    //Public Vars
     Leg *a;
     Leg *b;
     Leg *c;
     Leg *d;
-public:
-    Dog();
-    Dog(int legPinArray[][3], int originPointArray[][3]);
+    //Constructors
+    Dog(String);
+    //Methods
+    void standBy();
+    void testY();
+    void setLegPinsAndOrigin(int[][3], int[][3]);
 };
 
 #endif //DOG_CLASS_H

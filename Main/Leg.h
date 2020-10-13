@@ -1,7 +1,7 @@
 #ifndef LEG_CLASS_H
 #define LEG_CLASS_H
 
-#include "libraries/ESP32Servo-master/src/ESP32_Servo.h"
+#include "libraries/ESP32Servo/src/ESP32Servo.h"
 #include "Coordinates.h"
 
 class Leg{
@@ -13,7 +13,6 @@ class Leg{
         int humerusOrigin;
         int ulnaOrigin;
         int carpusOrigin;
-        double humerusLenMm;
         double ulnaLenMm;
         double carpusLenMm;
         double humerusAngle;
@@ -35,9 +34,11 @@ class Leg{
         Leg(int humerusPin, int ulnaPin, int carpusPin, int humerusOrigin, int ulnaOrigin, int carpusOrigin);
 
         //Methods
+        void attachServos();
         void initServos();
         void setAngles(double x, double y, double z);
         void updatePos();
+        void standBy();
 
         //Setters
         void setHumerusPin(int);
@@ -49,11 +50,19 @@ class Leg{
         void setHumerusLenMm(double);
         void setUlnaLenMm(double);
         void setCarpusLenMm(double);
+        void setLegCode(char);
 
         //Getters
         double getHumerusLenMm();
         double getUlnaLenMm();
         double setCarpusLenMm();
+        int getHumerusPin();
+        int getUlnaPin();
+        int getCarpusPin();
+        int getHumerusOrigin();
+        int getUlnaOrigin();
+        int getCarpusOrigin();
+        char getLegCode();
 };
 
 #endif //LEG_CLASS_H
