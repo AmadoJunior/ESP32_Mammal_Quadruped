@@ -1,0 +1,3 @@
+/home/amado/Documents/ESP32_Mammal_Quadruped/Lerp/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/amado/Documents/ESP32_Mammal_Quadruped/Lerp/cmake-build-debug/CMakeFiles/Lerp.dir
+/home/amado/Documents/ESP32_Mammal_Quadruped/Lerp/cmake-build-debug/CMakeFiles/edit_cache.dir

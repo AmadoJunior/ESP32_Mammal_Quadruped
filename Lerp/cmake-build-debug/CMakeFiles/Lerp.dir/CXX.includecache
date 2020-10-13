@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/amado/Documents/ESP32_Mammal_Quadruped/Lerp/lerpTest.cpp
+iostream
+-
+cmath
+-
+math.h
+-
+
