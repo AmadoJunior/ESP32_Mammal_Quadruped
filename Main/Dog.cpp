@@ -27,83 +27,83 @@ void Dog::standBy(){
 }
 
 void Dog::stand(){
-    Coordinates aC(-15, -20, -182);
+    Coordinates aC(-7, -40, -195);
     a->setDesiredCoordinates(aC);
-    Coordinates bC(15, -20, -182);
+    Coordinates bC(7, -40, -200);
     b->setDesiredCoordinates(bC);
-    Coordinates cC(15, -80, -182);
+    Coordinates cC(7, -80, -200);
     c->setDesiredCoordinates(cC);
-    Coordinates dC(-15, -80, -180);
+    Coordinates dC(-7, -80, -195);
     d->setDesiredCoordinates(dC);
     updateAllGradual(false, false);
 }
 
 void Dog::initTrot(){
-    Coordinates aC1(a->curCoordinates.x, a->curCoordinates.y+12, a->curCoordinates.z+25);
+    Coordinates aC1(a->curCoordinates.x, a->curCoordinates.y+15, a->curCoordinates.z+30);
     a->setDesiredCoordinates(aC1);
-    Coordinates bC1(b->curCoordinates.x, b->curCoordinates.y-12, b->curCoordinates.z-10);
+    Coordinates bC1(b->curCoordinates.x, b->curCoordinates.y-15, b->curCoordinates.z-20);
     b->setDesiredCoordinates(bC1);
-    Coordinates cC1(c->curCoordinates.x, c->curCoordinates.y-12, c->curCoordinates.z-10);
+    Coordinates cC1(c->curCoordinates.x, c->curCoordinates.y-15, c->curCoordinates.z-20);
     c->setDesiredCoordinates(cC1);
-    Coordinates dC1(d->curCoordinates.x, d->curCoordinates.y+12, d->curCoordinates.z+25);
+    Coordinates dC1(d->curCoordinates.x, d->curCoordinates.y+15, d->curCoordinates.z+30);
     d->setDesiredCoordinates(dC1);
     updateAllGradual(false, true);
-    Coordinates aC2(a->curCoordinates.x, a->curCoordinates.y+12, a->curCoordinates.z-25);
+    Coordinates aC2(a->curCoordinates.x, a->curCoordinates.y+15, a->curCoordinates.z-30);
     a->setDesiredCoordinates(aC2);
-    Coordinates bC2(b->curCoordinates.x, b->curCoordinates.y-12, b->curCoordinates.z+10);
+    Coordinates bC2(b->curCoordinates.x, b->curCoordinates.y-15, b->curCoordinates.z+20);
     b->setDesiredCoordinates(bC2);
-    Coordinates cC2(c->curCoordinates.x, c->curCoordinates.y-12, c->curCoordinates.z+10);
+    Coordinates cC2(c->curCoordinates.x, c->curCoordinates.y-15, c->curCoordinates.z+20);
     c->setDesiredCoordinates(cC2);
-    Coordinates dC2(d->curCoordinates.x, d->curCoordinates.y+12, d->curCoordinates.z-25);
+    Coordinates dC2(d->curCoordinates.x, d->curCoordinates.y+15, d->curCoordinates.z-30);
     d->setDesiredCoordinates(dC2);
     updateAllGradual(true, false);
 }
 
 void Dog::trot(bool state){
   if(state){
-    Coordinates aC1(a->curCoordinates.x, a->curCoordinates.y-25, a->curCoordinates.z-10);
+    Coordinates aC1(a->curCoordinates.x, a->curCoordinates.y-30, a->curCoordinates.z-20);
     a->setDesiredCoordinates(aC1);
-    Coordinates bC1(b->curCoordinates.x, b->curCoordinates.y+25, b->curCoordinates.z+25);
+    Coordinates bC1(b->curCoordinates.x, b->curCoordinates.y+30, b->curCoordinates.z+30);
     b->setDesiredCoordinates(bC1);
-    Coordinates cC1(c->curCoordinates.x, c->curCoordinates.y+25, c->curCoordinates.z+25);
+    Coordinates cC1(c->curCoordinates.x, c->curCoordinates.y+30, c->curCoordinates.z+30);
     c->setDesiredCoordinates(cC1);
-    Coordinates dC1(d->curCoordinates.x, d->curCoordinates.y-25, d->curCoordinates.z-10);
+    Coordinates dC1(d->curCoordinates.x, d->curCoordinates.y-30, d->curCoordinates.z-20);
     d->setDesiredCoordinates(dC1);
     updateAllGradual(false, true);
-    Coordinates aC2(a->curCoordinates.x, a->curCoordinates.y-25, a->curCoordinates.z+10);
+    Coordinates aC2(a->curCoordinates.x, a->curCoordinates.y-30, a->curCoordinates.z+20);
     a->setDesiredCoordinates(aC2);
-    Coordinates bC2(b->curCoordinates.x, b->curCoordinates.y+25, b->curCoordinates.z-25);
+    Coordinates bC2(b->curCoordinates.x, b->curCoordinates.y+30, b->curCoordinates.z-30);
     b->setDesiredCoordinates(bC2);
-    Coordinates cC2(c->curCoordinates.x, c->curCoordinates.y+25, c->curCoordinates.z-25);
+    Coordinates cC2(c->curCoordinates.x, c->curCoordinates.y+30, c->curCoordinates.z-30);
     c->setDesiredCoordinates(cC2);
-    Coordinates dC2(d->curCoordinates.x, d->curCoordinates.y-25, d->curCoordinates.z+10);
+    Coordinates dC2(d->curCoordinates.x, d->curCoordinates.y-30, d->curCoordinates.z+20);
     d->setDesiredCoordinates(dC2);
     updateAllGradual(true, false);
   } else {
-    Coordinates aC1(a->curCoordinates.x, a->curCoordinates.y+25, a->curCoordinates.z+25);
+    Coordinates aC1(a->curCoordinates.x, a->curCoordinates.y+30, a->curCoordinates.z+30);
     a->setDesiredCoordinates(aC1);
-    Coordinates bC1(b->curCoordinates.x, b->curCoordinates.y-25, b->curCoordinates.z-10);
+    Coordinates bC1(b->curCoordinates.x, b->curCoordinates.y-30, b->curCoordinates.z-20);
     b->setDesiredCoordinates(bC1);
-    Coordinates cC1(c->curCoordinates.x, c->curCoordinates.y-25, c->curCoordinates.z-10);
+    Coordinates cC1(c->curCoordinates.x, c->curCoordinates.y-30, c->curCoordinates.z-20);
     c->setDesiredCoordinates(cC1);
-    Coordinates dC1(d->curCoordinates.x, d->curCoordinates.y+25, d->curCoordinates.z+25);
+    Coordinates dC1(d->curCoordinates.x, d->curCoordinates.y+30, d->curCoordinates.z+30);
     d->setDesiredCoordinates(dC1);
     updateAllGradual(false, true);
-    Coordinates aC2(a->curCoordinates.x, a->curCoordinates.y+25, a->curCoordinates.z-25);
+    Coordinates aC2(a->curCoordinates.x, a->curCoordinates.y+30, a->curCoordinates.z-30);
     a->setDesiredCoordinates(aC2);
-    Coordinates bC2(b->curCoordinates.x, b->curCoordinates.y-25, b->curCoordinates.z+10);
+    Coordinates bC2(b->curCoordinates.x, b->curCoordinates.y-30, b->curCoordinates.z+20);
     b->setDesiredCoordinates(bC2);
-    Coordinates cC2(c->curCoordinates.x, c->curCoordinates.y-25, c->curCoordinates.z+10);
+    Coordinates cC2(c->curCoordinates.x, c->curCoordinates.y-30, c->curCoordinates.z+20);
     c->setDesiredCoordinates(cC2);
-    Coordinates dC2(d->curCoordinates.x, d->curCoordinates.y+25, d->curCoordinates.z-25);
+    Coordinates dC2(d->curCoordinates.x, d->curCoordinates.y+30, d->curCoordinates.z-30);
     d->setDesiredCoordinates(dC2);
     updateAllGradual(true, false);
   }
 }
 
 void Dog::updateAllGradual(bool easeIn, bool easeOut){
-  float increments = 0.0012;
-  float curStep = 0.0012;
+  float increments = 0.0025;
+  float curStep = 0.0025;
   float (*transition)(float);
 
   if(easeIn){
