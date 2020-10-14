@@ -1,7 +1,7 @@
 #include <ESP32Servo.h>
 #include "Dog.h"
 
-bool state = false;
+bool state = true;
 
 //Leg Pins
 int legPinArray[4][3] = {
@@ -12,10 +12,11 @@ int legPinArray[4][3] = {
 };
 //Leg Origins
 int legOriginArray[4][3] = {
-  {95, 80, 105},
-  {70, 95, 65},
-  {62, 95, 120},
-  {110, 85, 70}
+  {100, 75, 108},
+  {65, 105, 65},
+  {58, 80, 113},
+  {110, 95, 60}
+
 };
 //Dog Object
 Dog myDog("Spot");
@@ -25,10 +26,11 @@ void setup() {
   myDog.setLegPinsAndOrigin(legPinArray, legOriginArray);
   myDog.standBy();
   myDog.stand();
+  myDog.initTrot();
+  delay(500);
 }
 
 void loop() {
   myDog.trot(state);
   state = !state;
-  delay(40);
 }

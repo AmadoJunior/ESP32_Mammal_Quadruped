@@ -31,64 +31,85 @@ void Dog::stand(){
     a->setDesiredCoordinates(aC);
     Coordinates bC(15, -20, -182);
     b->setDesiredCoordinates(bC);
-    Coordinates cC(15, -70, -182);
+    Coordinates cC(15, -80, -182);
     c->setDesiredCoordinates(cC);
-    Coordinates dC(-15, -70, -180);
+    Coordinates dC(-15, -80, -180);
     d->setDesiredCoordinates(dC);
     updateAllGradual(false, false);
 }
 
+void Dog::initTrot(){
+    Coordinates aC1(a->curCoordinates.x, a->curCoordinates.y+12, a->curCoordinates.z+25);
+    a->setDesiredCoordinates(aC1);
+    Coordinates bC1(b->curCoordinates.x, b->curCoordinates.y-12, b->curCoordinates.z-10);
+    b->setDesiredCoordinates(bC1);
+    Coordinates cC1(c->curCoordinates.x, c->curCoordinates.y-12, c->curCoordinates.z-10);
+    c->setDesiredCoordinates(cC1);
+    Coordinates dC1(d->curCoordinates.x, d->curCoordinates.y+12, d->curCoordinates.z+25);
+    d->setDesiredCoordinates(dC1);
+    updateAllGradual(false, true);
+    Coordinates aC2(a->curCoordinates.x, a->curCoordinates.y+12, a->curCoordinates.z-25);
+    a->setDesiredCoordinates(aC2);
+    Coordinates bC2(b->curCoordinates.x, b->curCoordinates.y-12, b->curCoordinates.z+10);
+    b->setDesiredCoordinates(bC2);
+    Coordinates cC2(c->curCoordinates.x, c->curCoordinates.y-12, c->curCoordinates.z+10);
+    c->setDesiredCoordinates(cC2);
+    Coordinates dC2(d->curCoordinates.x, d->curCoordinates.y+12, d->curCoordinates.z-25);
+    d->setDesiredCoordinates(dC2);
+    updateAllGradual(true, false);
+}
+
 void Dog::trot(bool state){
   if(state){
-    Coordinates aC1(a->curCoordinates.x, a->curCoordinates.y-25, a->curCoordinates.z+25);
+    Coordinates aC1(a->curCoordinates.x, a->curCoordinates.y-25, a->curCoordinates.z-10);
     a->setDesiredCoordinates(aC1);
     Coordinates bC1(b->curCoordinates.x, b->curCoordinates.y+25, b->curCoordinates.z+25);
     b->setDesiredCoordinates(bC1);
     Coordinates cC1(c->curCoordinates.x, c->curCoordinates.y+25, c->curCoordinates.z+25);
     c->setDesiredCoordinates(cC1);
-    Coordinates dC1(d->curCoordinates.x, d->curCoordinates.y-25, d->curCoordinates.z+25);
+    Coordinates dC1(d->curCoordinates.x, d->curCoordinates.y-25, d->curCoordinates.z-10);
     d->setDesiredCoordinates(dC1);
     updateAllGradual(false, true);
-    Coordinates aC2(a->curCoordinates.x, a->curCoordinates.y-25, a->curCoordinates.z-25);
+    Coordinates aC2(a->curCoordinates.x, a->curCoordinates.y-25, a->curCoordinates.z+10);
     a->setDesiredCoordinates(aC2);
     Coordinates bC2(b->curCoordinates.x, b->curCoordinates.y+25, b->curCoordinates.z-25);
     b->setDesiredCoordinates(bC2);
     Coordinates cC2(c->curCoordinates.x, c->curCoordinates.y+25, c->curCoordinates.z-25);
     c->setDesiredCoordinates(cC2);
-    Coordinates dC2(d->curCoordinates.x, d->curCoordinates.y-25, d->curCoordinates.z-25);
+    Coordinates dC2(d->curCoordinates.x, d->curCoordinates.y-25, d->curCoordinates.z+10);
     d->setDesiredCoordinates(dC2);
     updateAllGradual(true, false);
   } else {
     Coordinates aC1(a->curCoordinates.x, a->curCoordinates.y+25, a->curCoordinates.z+25);
     a->setDesiredCoordinates(aC1);
-    Coordinates bC1(b->curCoordinates.x, b->curCoordinates.y-25, b->curCoordinates.z+25);
+    Coordinates bC1(b->curCoordinates.x, b->curCoordinates.y-25, b->curCoordinates.z-10);
     b->setDesiredCoordinates(bC1);
-    Coordinates cC1(c->curCoordinates.x, c->curCoordinates.y-25, c->curCoordinates.z+25);
+    Coordinates cC1(c->curCoordinates.x, c->curCoordinates.y-25, c->curCoordinates.z-10);
     c->setDesiredCoordinates(cC1);
     Coordinates dC1(d->curCoordinates.x, d->curCoordinates.y+25, d->curCoordinates.z+25);
     d->setDesiredCoordinates(dC1);
     updateAllGradual(false, true);
-    Coordinates aC1(a->curCoordinates.x, a->curCoordinates.y+25, a->curCoordinates.z-25);
-    a->setDesiredCoordinates(aC1);
-    Coordinates bC1(b->curCoordinates.x, b->curCoordinates.y-25, b->curCoordinates.z-25);
-    b->setDesiredCoordinates(bC1);
-    Coordinates cC1(c->curCoordinates.x, c->curCoordinates.y-25, c->curCoordinates.z-25);
-    c->setDesiredCoordinates(cC1);
-    Coordinates dC1(d->curCoordinates.x, d->curCoordinates.y+25, d->curCoordinates.z-25);
-    d->setDesiredCoordinates(dC1);
+    Coordinates aC2(a->curCoordinates.x, a->curCoordinates.y+25, a->curCoordinates.z-25);
+    a->setDesiredCoordinates(aC2);
+    Coordinates bC2(b->curCoordinates.x, b->curCoordinates.y-25, b->curCoordinates.z+10);
+    b->setDesiredCoordinates(bC2);
+    Coordinates cC2(c->curCoordinates.x, c->curCoordinates.y-25, c->curCoordinates.z+10);
+    c->setDesiredCoordinates(cC2);
+    Coordinates dC2(d->curCoordinates.x, d->curCoordinates.y+25, d->curCoordinates.z-25);
+    d->setDesiredCoordinates(dC2);
     updateAllGradual(true, false);
   }
 }
 
 void Dog::updateAllGradual(bool easeIn, bool easeOut){
-  float increments = 0.01;
-  float curStep = 0.01;
+  float increments = 0.0012;
+  float curStep = 0.0012;
   float (*transition)(float);
 
   if(easeIn){
     transition = &easeInQuad;
   } else if(easeOut) {
-    transtion = &easeOutQuad;
+    transition = &easeOutQuad;
   }
 
   while(a->curCoordinates.x != a->desiredCoordinates.x ||
@@ -105,15 +126,15 @@ void Dog::updateAllGradual(bool easeIn, bool easeOut){
         d->curCoordinates.z != d->desiredCoordinates.z
   ){
     //X
-      a->curCoordinates.x = lerp(a->curCoordinates.x, a->desiredCoordinates.x, curStep);
-      b->curCoordinates.x = lerp(b->curCoordinates.x, b->desiredCoordinates.x, curStep);
-      c->curCoordinates.x = lerp(c->curCoordinates.x, c->desiredCoordinates.x, curStep);
-      d->curCoordinates.x = lerp(d->curCoordinates.x, d->desiredCoordinates.x, curStep);
+      a->curCoordinates.x = lerp(a->curCoordinates.x, a->desiredCoordinates.x, transition(curStep));
+      b->curCoordinates.x = lerp(b->curCoordinates.x, b->desiredCoordinates.x, transition(curStep));
+      c->curCoordinates.x = lerp(c->curCoordinates.x, c->desiredCoordinates.x, transition(curStep));
+      d->curCoordinates.x = lerp(d->curCoordinates.x, d->desiredCoordinates.x, transition(curStep));
     //Y
-      a->curCoordinates.y = lerp(a->curCoordinates.y, a->desiredCoordinates.y, curStep);
-      b->curCoordinates.y = lerp(b->curCoordinates.y, b->desiredCoordinates.y, curStep);
-      c->curCoordinates.y = lerp(c->curCoordinates.y, c->desiredCoordinates.y, curStep);
-      d->curCoordinates.y = lerp(d->curCoordinates.y, d->desiredCoordinates.y, curStep);
+      a->curCoordinates.y = lerp(a->curCoordinates.y, a->desiredCoordinates.y, transition(curStep));
+      b->curCoordinates.y = lerp(b->curCoordinates.y, b->desiredCoordinates.y, transition(curStep));
+      c->curCoordinates.y = lerp(c->curCoordinates.y, c->desiredCoordinates.y, transition(curStep));
+      d->curCoordinates.y = lerp(d->curCoordinates.y, d->desiredCoordinates.y, transition(curStep));
     //Z
       a->curCoordinates.z = lerp(a->curCoordinates.z, a->desiredCoordinates.z, transition(curStep));
       b->curCoordinates.z = lerp(b->curCoordinates.z, b->desiredCoordinates.z, transition(curStep));
@@ -130,7 +151,6 @@ void Dog::updateAllGradual(bool easeIn, bool easeOut){
       d->updatePos();
     //Advancing
       curStep += increments;
-      delay(50);
   }
 }
 

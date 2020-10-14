@@ -22,7 +22,8 @@ public:
     void standBy();
     void stand();
     void trot(bool state);
-    void updateAllGradual(bool);
+    void updateAllGradual(bool, bool);
+    void initTrot();
     //Setters
     void setLegPinsAndOrigin(int[][3], int[][3]);
     
