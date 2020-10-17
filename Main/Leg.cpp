@@ -5,14 +5,14 @@
 
 //Constructors
 Leg::Leg(){
-    this->ulnaLenMm = 105;
-    this->carpusLenMm = 135;
+    this->ulnaLenMm = sqrt(sq(110) + sq(15));
+    this->carpusLenMm = 120;
 }
 Leg::Leg(int humerusPin, int ulnaPin, int carpusPin, int humerusOrigin_, int ulnaOrigin_, int carpusOrigin_) : 
 humerusPin(humerusPin), ulnaPin(ulnaPin), carpusPin(carpusPin), humerusOrigin(humerusOrigin_), ulnaOrigin(ulnaOrigin_), carpusOrigin(carpusOrigin_){
     //Length of Limbs
-    this->ulnaLenMm = 105;
-    this->carpusLenMm = 135;
+    this->ulnaLenMm = sqrt(sq(110) + sq(15));
+    this->carpusLenMm = 120;
 }
 
 //Methods
@@ -82,7 +82,10 @@ void Leg::setAngles(double x, double y, double z){
 
     //Hypothenus
     hyp = sqrt(pow(newX, 2) + pow(newY, 2));
-
+    //Checking Limits
+    if(hyp > getCarpusLenMm() + getUlnaLenMm()){
+        return;
+    }
     //Alpha
     alpha = pow(ulnaLenMm, 2) + pow(carpusLenMm, 2) - pow(newX, 2) - pow(newY, 2);
     alpha = alpha / (2 * ulnaLenMm * carpusLenMm);
@@ -94,9 +97,12 @@ void Leg::setAngles(double x, double y, double z){
 
     //Q2
     q2 = 180 - alpha;
-    // Serial.println();
-    // Serial.println("q2");
-    // Serial.println(q2);
+     if(legCode == 'A'){
+        Serial.println();
+        Serial.println("q2");
+        Serial.println(q2);
+
+    }
 
     //Q2 to Rad
     q2 = q2 * 1000 / 57296;
@@ -122,10 +128,12 @@ void Leg::setAngles(double x, double y, double z){
 
     //Converting Q2 Back to Degrees
     q2 = q2 * 57296 / 1000;
-
-    // Serial.println();
-    // Serial.println("q1");
-    // Serial.println(q1);
+    if(legCode == 'A'){
+        Serial.println();
+        Serial.println("q1");
+        Serial.println(q1);
+    }
+    
 
     //Setting Ulna & Carpus ===========================================
     if(legCode == 'A'){
@@ -167,8 +175,9 @@ void Leg::setAngles(double x, double y, double z){
 }
 
 void Leg::updatePos(){
-    humerusServo.write((int) humerusAngle);
-    ulnaServo.write((int) ulnaAngle);
+    if(humerusAngle )
+    humerusServo.write(humerusAngle);
+    ulnaServo.write((int)ulnaAngle);
     carpusServo.write((int) carpusAngle);
 }
 
@@ -242,3 +251,23 @@ int Leg::getCarpusOrigin(){
 char Leg::getLegCode(){
     return legCode;
 }
+
+double Leg::getHumerusAngle(){
+    return humerusAngle;
+}
+
+double Leg::getUlnaAngle(){
+    return ulnaAngle;
+}
+
+double Leg::getCarpusAngle(){
+    return carpusAngle;
+}
+
+double Leg::getUlnaLenMm(){
+    return ulnaLenMm;
+}
+double Leg::getCarpusLenMm(){
+    return carpusLenMm;
+}
+

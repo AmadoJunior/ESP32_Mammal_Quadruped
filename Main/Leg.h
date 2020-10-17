@@ -59,7 +59,7 @@ class Leg{
         //Getters
         double getHumerusLenMm();
         double getUlnaLenMm();
-        double setCarpusLenMm();
+        double getCarpusLenMm();
         int getHumerusPin();
         int getUlnaPin();
         int getCarpusPin();
@@ -67,6 +67,9 @@ class Leg{
         int getUlnaOrigin();
         int getCarpusOrigin();
         char getLegCode();
+        double getHumerusAngle();
+        double getUlnaAngle();
+        double getCarpusAngle();
 };
 
 #endif //LEG_CLASS_H

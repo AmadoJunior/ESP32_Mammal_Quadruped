@@ -173,3 +173,43 @@ void Dog::setLegPinsAndOrigin(int legPinArray[][3], int legOriginArray[][3]){
     }
 }
 
+//Test Methods
+void Dog::moveInZ(ZDirection dir){
+  double increment = dir == up ? 5 : -5;
+  a->setAngles(a->curCoordinates.getX(), a->curCoordinates.getY(), a->curCoordinates.getZ() + increment);
+  b->setAngles(b->curCoordinates.getX(), b->curCoordinates.getY(), b->curCoordinates.getZ() + increment);
+  c->setAngles(c->curCoordinates.getX(), c->curCoordinates.getY(), c->curCoordinates.getZ() + increment);
+  d->setAngles(d->curCoordinates.getX(), d->curCoordinates.getY(), d->curCoordinates.getZ() + increment);
+  a->updatePos();
+  b->updatePos();
+  c->updatePos();
+  d->updatePos();
+  delay(15);
+}
+
+void Dog::moveInY(YDirection dir){
+  double increment = dir == forward ? 5 : -5;
+  a->setAngles(a->curCoordinates.getX(), a->curCoordinates.getY() + increment, a->curCoordinates.getZ());
+  b->setAngles(b->curCoordinates.getX(), b->curCoordinates.getY() + increment, b->curCoordinates.getZ());
+  c->setAngles(c->curCoordinates.getX(), c->curCoordinates.getY() + increment, c->curCoordinates.getZ());
+  d->setAngles(d->curCoordinates.getX(), d->curCoordinates.getY() + increment, d->curCoordinates.getZ());
+  a->updatePos();
+  b->updatePos();
+  c->updatePos();
+  d->updatePos();
+  delay(15);
+}
+
+void Dog::moveInX(XDirection dir){
+  double increment = dir == right ? 5 : -5;
+  a->setAngles(a->curCoordinates.getX() + increment, a->curCoordinates.getY(), a->curCoordinates.getZ());
+  b->setAngles(b->curCoordinates.getX() + increment, b->curCoordinates.getY(), b->curCoordinates.getZ());
+  c->setAngles(c->curCoordinates.getX() + increment, c->curCoordinates.getY(), c->curCoordinates.getZ());
+  d->setAngles(d->curCoordinates.getX() + increment, d->curCoordinates.getY(), d->curCoordinates.getZ());
+  a->updatePos();
+  b->updatePos();
+  c->updatePos();
+  d->updatePos();
+  delay(15);
+}
+

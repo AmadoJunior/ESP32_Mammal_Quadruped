@@ -4,7 +4,12 @@
 #include "Leg.h"
 #include "Coordinates.h"
 #include <Arduino.h>
+//Enums
+enum ZDirection {up, down};
+enum YDirection {forward, backward};
+enum XDirection {left, right};
 
+//Class
 class Dog{
 private:
     String name;
@@ -26,7 +31,10 @@ public:
     void initTrot();
     //Setters
     void setLegPinsAndOrigin(int[][3], int[][3]);
-    
+    //Test Methods
+    void moveInZ(ZDirection);
+    void moveInY(YDirection);
+    void moveInX(XDirection);
 };
 
 #endif //DOG_CLASS_H
